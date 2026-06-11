@@ -29,11 +29,22 @@ const info = site.contact
           </h1>
           <p class="mt-5 leading-relaxed text-ink-soft md:max-w-md">{{ c.hero.lead }}</p>
           <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-            <RouterLink :to="{ hash: '#contact' }" class="btn btn-solid" @click="trackCTA('hero')">
-              Κλείσε δωρεάν γνωριμία
+            <RouterLink
+                :to="{ hash: '#contact' }"
+                class="group inline-flex items-center gap-5 border-b border-ink pb-2 text-ink text-lg font-semibold tracking-tight transition-all duration-300 hover:gap-7"
+                @click="trackCTA('hero')"
+            >
+              <span class="transition-transform duration-300 group-hover:translate-x-1">
+                Κλείσε δωρεάν γνωριμία →
+              </span>
             </RouterLink>
-            <RouterLink :to="{ hash: '#subjects' }" class="btn btn-primary">
-              Δες τα μαθήματα
+            <RouterLink
+                :to="{ hash: '#subjects' }"
+                class="group inline-flex items-center gap-5 border-b border-ink pb-2 text-ink text-lg font-semibold tracking-tight transition-all duration-300 hover:gap-7"
+            >
+              <span class="transition-transform duration-300 group-hover:translate-x-1">
+                Δες τα μαθήματα →
+              </span>
             </RouterLink>
           </div>
         </div>
@@ -45,8 +56,9 @@ const info = site.contact
 
     <!-- ============ Η ΚΑΘΗΓΗΤΡΙΑ (centered) ============ -->
     <div id="about" class="scroll-mt-24 md:scroll-mt-28">
-      <BaseSection eyebrow="Η καθηγήτρια" title="Ποια είμαι" soft>
-        <div class="mx-auto max-w-2xl text-center">
+      <!-- Η καθηγήτρια -->
+      <BaseSection eyebrow="Η καθηγήτρια" title="Λίγα λόγια για μένα" soft watermark="quill">
+      <div class="mx-auto max-w-2xl text-center">
           <div v-reveal class="mx-auto w-full max-w-[240px]">
             <div class="aspect-[3/4] w-full rounded-2xl bg-bg-soft"></div>
             <p class="mt-3 text-sm text-ink-soft">{{ c.about.role }}</p>
@@ -88,7 +100,7 @@ const info = site.contact
     </div>
 
     <!-- ============ ΜΕΘΟΔΟΣ (centered) ============ -->
-    <BaseSection eyebrow="Η μέθοδος" title="Πώς δουλεύουμε" soft>
+    <BaseSection eyebrow="Η μέθοδος" title="Πώς δουλεύουμε" soft watermark="book">
       <ol class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <li v-for="(step, i) in c.method" :key="step.title" v-reveal="i" class="flex flex-col items-center gap-3 text-center">
           <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 font-display text-lg font-bold text-accent-deep">
@@ -121,7 +133,7 @@ const info = site.contact
 
     <!-- ============ ΕΠΙΚΟΙΝΩΝΙΑ ============ -->
     <div id="contact" class="scroll-mt-24 md:scroll-mt-28">
-      <BaseSection eyebrow="Επικοινωνία" title="Ας ξεκινήσουμε" soft>
+      <BaseSection eyebrow="Επικοινωνία" title="Ας ξεκινήσουμε" soft watermark="column">
         <div class="grid gap-10 lg:grid-cols-2">
           <div v-reveal class="text-center">
             <p class="mx-auto max-w-md leading-relaxed text-ink-soft">

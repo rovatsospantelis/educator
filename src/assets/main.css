@@ -17,7 +17,7 @@
   --color-accent-deep: #000000;
 
   --font-sans: "Inter", system-ui, sans-serif;
-  --font-display: "Inter", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
   --font-brand: "Cormorant Garamond", Georgia, serif;
 
   --site-col: 72rem;
@@ -30,16 +30,20 @@
    ή το αντίστροφο — όρισε ρητά κάθε ρόλο.
    ============================================================ */
 html.dark {
-  --color-bg: #121411;          /* σχεδόν μαύρο, ίχνος sage */
-  --color-bg-soft: #181b16;
-  --color-surface: #1c1f1a;
-  --color-ink: #ecece8;         /* ζεστό λευκό, όχι κλινικό */
-  --color-ink-soft: #a3a49c;
-  --color-muted: #474a42;
-  --color-line: #2e2827;
-  --color-accent: #a3bd8d;      /* ανοιχτό sage — το dark του #3f5237 */
-  --color-accent-deep: #f2f3ee; /* ζεστό off-white αντί καθαρό λευκό */
-  --col-bg: #1b211a;            /* σκούρο sage στήλη */
+  --color-bg: #1b2119;          /* πιο μαλακό σκούρο sage, όχι σχεδόν μαύρο */
+  --color-bg-soft: #222a20;     /* sections με soft */
+  --color-surface: #252d23;     /* cards / φόρμες / surfaces */
+
+  --color-ink: #f1eee7;         /* ζεστό λευκό */
+  --color-ink-soft: #b9baaf;    /* secondary text */
+
+  --color-muted: #68705f;
+  --color-line: #3a4236;
+
+  --color-accent: #c1d6a8;      /* φωτεινό sage για accents */
+  --color-accent-deep: #f6f1e8; /* για έντονα στοιχεία στο dark */
+
+  --col-bg: #273321;            /* η sage στήλη, πιο ορατή αλλά όχι βαριά */
 }
 
 /* ============================================================
@@ -55,8 +59,13 @@ html.dark {
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 600;
-    line-height: 1.1;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  p, li, a, button, input, textarea {
+    font-family: var(--font-sans);
   }
   /* Logo invert helper για dark (πρόχειρη λύση μέχρι να φτιάξεις
      ανοιχτόχρωμη εκδοχή του logo) */
@@ -105,6 +114,21 @@ html.dark {
   .btn-outline:hover {
     border-color: var(--color-ink);
   }
+  /* Nav link underline — ίδιο στυλ με τα buttons (hover + active) */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -4px;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.is-active::after { transform: scaleX(1); }
 }
 
 /* ============================================================

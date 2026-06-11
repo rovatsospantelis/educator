@@ -75,7 +75,7 @@ function dayLine(d) {
     <!-- Bottom bar -->
     <div class="border-t" style="border-color: rgba(255,255,255,0.08)">
       <div class="mx-auto max-w-[var(--site-col)] px-6 pt-5 pb-28 text-center text-xs opacity-60 md:pb-5">
-        <p>© {{ year }} {{ site.name }}</p>
+        <p>© Post Tenebras Spero Lucem</p>
         <p class="mt-1">
           Powered by
           <a :href="'mailto:' + site.credit.email" class="font-medium hover:opacity-100">

@@ -90,9 +90,10 @@ async function submit() {
     <p v-if="status === 'error'" class="text-sm text-red-500">{{ errorMsg }}</p>
 
     <button @click="submit" :disabled="status === 'sending'"
-      class="btn btn-solid w-full sm:w-auto">
+            class="group mx-auto flex w-fit items-center gap-5 border-b border-ink pb-2 text-ink text-lg font-semibold tracking-tight transition-all duration-300 hover:gap-7">
       <Send :size="18" :stroke-width="1.8" />
       {{ status === 'sending' ? 'Αποστολή…' : 'Στείλε μήνυμα' }}
+      <span class="transition-transform duration-300 group-hover:translate-x-1"> → </span>
     </button>
   </div>
 </template>

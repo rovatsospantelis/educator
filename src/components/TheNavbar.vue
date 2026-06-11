@@ -1,11 +1,24 @@
 <script setup>
 import ThemeToggle from '@/components/ThemeToggle.vue'
+import FlowerMark from '@/components/FlowerMark.vue'
 import { site } from '@/config/site'
 
+/**
+ * Links ως prop — κάθε project ορίζει τα δικά του.
+ * Σχήμα link: { id, label, icon }  (το id = id του <section> στην αρχική)
+ * Το `active` (από scrollspy στο App.vue) λέει ποιο link να φωτιστεί.
+ */
 const props = defineProps({
   links: { type: Array, default: () => [] },
   active: { type: String, default: '' },
 })
+
+const navLinks = [
+  { id: 'top', label: 'Αρχική', short: 'Αρχική' },
+  { id: 'about', label: 'Η καθηγήτρια', short: 'Καθηγήτρια' },
+  { id: 'subjects', label: 'Μαθήματα', short: 'Μαθήματα' },
+  { id: 'contact', label: 'Επικοινωνία', short: 'Επαφή' },
+]
 </script>
 
 <template>
@@ -13,22 +26,31 @@ const props = defineProps({
       class="sticky top-0 z-50 border-b border-line backdrop-blur"
       style="background: color-mix(in srgb, var(--color-bg) 90%, transparent)"
   >
-    <div class="mx-auto flex max-w-[var(--site-col)] items-center justify-between px-6 py-4">
-      <RouterLink :to="{ hash: '#top' }" class="leading-none">
+    <div class="relative mx-auto flex max-w-[var(--site-col)] items-center justify-between px-6 py-4">
+      <!-- Αχνό watermark (clip στα όρια του header) -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
+        <FlowerMark
+            class="absolute top-1/2 left-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 text-accent opacity-[0.05]"
+        />
+      </div>
+
+      <!-- Brand → κορυφή -->
+      <RouterLink :to="{ hash: '#top' }" class="relative z-10 leading-none">
         <span class="block font-brand text-[32px] font-semibold">{{ site.name }}</span>
         <span class="mt-1 block text-[11px] uppercase tracking-[0.22em] text-ink-soft">Φιλόλογος</span>
       </RouterLink>
 
-      <div class="flex items-center gap-6">
+      <!-- Δεξιά: serif links + toggle στην άκρη -->
+      <div class="relative z-10 flex items-center gap-6">
         <nav class="hidden items-center gap-7 md:flex">
           <RouterLink
               v-for="l in props.links"
               :key="l.id"
               :to="{ hash: '#' + l.id }"
               :class="[
-              'font-brand text-lg transition-colors hover:text-accent-deep',
-              props.active === l.id ? 'italic text-accent-deep' : 'text-ink',
-            ]"
+      'nav-link font-brand text-lg transition-colors hover:text-accent-deep',
+      props.active === l.id ? 'is-active text-accent-deep' : 'text-ink',
+    ]"
           >
             {{ l.label }}
           </RouterLink>
@@ -39,25 +61,24 @@ const props = defineProps({
     </div>
   </header>
 
-  <!-- Mobile bottom tab bar -->
+  <!-- Mobile bottom tab bar — serif text + underline (variant C) -->
   <nav
       class="fixed inset-x-0 bottom-0 z-50 border-t border-line backdrop-blur md:hidden"
       style="background: color-mix(in srgb, var(--color-surface) 95%, transparent)"
   >
     <ul
-        class="flex items-stretch justify-around px-1 pt-1.5"
-        style="padding-bottom: calc(0.4rem + env(safe-area-inset-bottom))"
+        class="flex items-center justify-around px-2 pt-3"
+        style="padding-bottom: calc(0.7rem + env(safe-area-inset-bottom))"
     >
-      <li v-for="l in props.links" :key="l.id" class="flex-1">
+      <li v-for="l in props.links" :key="l.id">
         <RouterLink
             :to="{ hash: '#' + l.id }"
             :class="[
-            'flex flex-col items-center gap-0.5 rounded-xl px-2 py-1.5 transition-colors',
-            props.active === l.id ? 'text-accent-deep bg-accent/10' : 'text-ink-soft',
+            'nav-link font-brand text-[15px] transition-colors',
+            props.active === l.id ? 'is-active text-accent-deep' : 'text-ink-soft',
           ]"
         >
-          <component :is="l.icon" :size="22" :stroke-width="1.7" />
-          <span class="text-[10px] font-medium">{{ l.label }}</span>
+          {{ l.short || l.label }}
         </RouterLink>
       </li>
     </ul>
