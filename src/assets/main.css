@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — LIGHT (default)
+   Άλλαξε αυτά για να αλλάξεις την παλέτα όλου του site.
+   Κράτα τα ΟΝΟΜΑΤΑ ίδια — τα components τα χρησιμοποιούν.
+   ============================================================ */
+@theme {
+  --color-bg: #ffffff;
+  --color-bg-soft: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #666666;
+  --color-muted: #cccccc;
+  --color-line: #e5e5e5;
+  --color-accent: #3f5237;
+  --color-accent-deep: #000000;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+
+  --site-col: 56rem;
+}
+
+/* ============================================================
+   DARK TOKENS — ίδια ονόματα, αντεστραμμένες τιμές.
+   ΣΗΜΑΝΤΙΚΟ: μην βασίζεσαι σε token "φόντου" για κείμενο
+   ή το αντίστροφο — όρισε ρητά κάθε ρόλο.
+   ============================================================ */
+html.dark {
+  --color-bg: #121212;
+  --color-bg-soft: #1a1a1a;
+  --color-surface: #1e1e1e;
+  --color-ink: #ececec;
+  --color-ink-soft: #a0a0a0;
+  --color-muted: #444444;
+  --color-line: #2a2a2a;
+  --color-accent: #a3bd8d;
+  --color-accent-deep: #ffffff;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .4s ease, color .4s ease;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  /* Logo invert helper για dark (πρόχειρη λύση μέχρι να φτιάξεις
+     ανοιχτόχρωμη εκδοχή του logo) */
+  html.dark .site-logo {
+    filter: invert(1) brightness(1.05);
+  }
+}
+
+/* ============================================================
+   COMPONENT CLASSES
+   ============================================================ */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .85rem 2rem;
+    border-radius: .75rem;
+    border: 1.5px solid transparent;
+    font-weight: 500;
+    font-size: .95rem;
+    transition: all .25s ease;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: transparent;
+    color: var(--color-accent-deep);
+    border-color: var(--color-accent-deep);
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-deep);
+    color: var(--color-bg);
+  }
+  .btn-solid {
+    background: var(--color-accent-deep);
+    color: var(--color-bg);
+    border-color: var(--color-accent-deep);
+  }
+  .btn-solid:hover { opacity: .9; }
+  .btn-outline {
+    background: transparent;
+    color: var(--color-ink);
+    border-color: var(--color-muted);
+  }
+  .btn-outline:hover {
+    border-color: var(--color-ink);
+  }
+}
+
+/* ============================================================
+   PAGE TRANSITIONS (tab → tab)
+   ============================================================ */
+.page-enter-active {
+  transition: opacity .8s ease-out, transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page-leave-active {
+  transition: opacity .3s ease, transform .3s ease;
+}
+.page-enter-from { opacity: 0; transform: translateY(16px); }
+.page-leave-to { opacity: 0; transform: translateY(-8px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active, .page-leave-active { transition: none; }
+  .page-enter-from, .page-leave-to { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   THEME TOGGLE tooltip (easter egg slot)
+   ============================================================ */
+.tl-toggle::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: .8rem;
+  letter-spacing: .05em;
+  color: var(--color-ink-soft);
+  background: var(--color-bg);
+  padding: 2px 8px;
+  border-radius: 6px;
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.tl-toggle:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+@media (min-width: 768px) {
+  .tl-toggle::after {
+    top: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(-50%) translateX(-4px);
+  }
+  .tl-toggle:hover::after {
+    transform: translateY(-50%) translateX(0);
+  }
+}
