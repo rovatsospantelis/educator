@@ -22,12 +22,12 @@ function dayLine(d) {
 <template>
   <footer class="site-footer">
     <div
-      class="mx-auto grid max-w-6xl gap-10 px-6 py-14 text-center md:grid-cols-4 md:text-left"
+        class="mx-auto flex max-w-[var(--site-col)] flex-col items-center gap-8 px-6 py-14 text-center"
     >
       <!-- Brand -->
       <div>
-        <p class="font-display text-2xl font-bold">{{ site.name }}</p>
-        <p class="mt-3 font-display text-lg italic opacity-80">{{ site.tagline }}</p>
+        <p class="font-brand text-3xl font-semibold">{{ site.name }}</p>
+        <p class="mt-2 font-display text-lg italic opacity-80">{{ site.tagline }}</p>
       </div>
 
       <!-- Contact -->
@@ -35,7 +35,6 @@ function dayLine(d) {
         <p class="font-medium">Επικοινωνία</p>
         <div class="mt-3 space-y-1.5 opacity-80">
           <p v-if="c.address.street">{{ c.address.street }}, {{ c.address.area }}</p>
-          <p v-if="c.phone"><a :href="'tel:' + c.phoneRaw" class="hover:opacity-100">{{ c.phone }}</a></p>
           <p v-if="c.mobile"><a :href="'tel:' + c.mobileRaw" class="hover:opacity-100">{{ c.mobile }}</a></p>
           <p v-if="c.email"><a :href="'mailto:' + c.email" class="hover:opacity-100">{{ c.email }}</a></p>
         </div>
@@ -75,7 +74,7 @@ function dayLine(d) {
 
     <!-- Bottom bar -->
     <div class="border-t" style="border-color: rgba(255,255,255,0.08)">
-      <div class="mx-auto max-w-6xl px-6 pt-5 pb-28 text-center text-xs opacity-60 md:pb-5">
+      <div class="mx-auto max-w-[var(--site-col)] px-6 pt-5 pb-28 text-center text-xs opacity-60 md:pb-5">
         <p>© {{ year }} {{ site.name }}</p>
         <p class="mt-1">
           Powered by

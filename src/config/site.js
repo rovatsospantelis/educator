@@ -7,8 +7,8 @@
 
 export const site = {
   // --- Ταυτότητα ---
-  name: 'Παναγιώτα Κατσούλα Φιλόλογος',
-  shortName: 'Παναγιώτα Κατσούλα',
+  name: 'Παναγιώτα Κατσούλα',
+  shortName: 'Π. Κατσούλα',
   tagline: 'Φιλόλογος',
   description:
     'Ιδιαίτερα μαθήματα φιλολογικών για Δημοτικό, Γυμνάσιο, Λύκειο και Πανελλήνιες. Αρχαία, Έκθεση, Λατινικά, Λογοτεχνία' +
@@ -18,14 +18,12 @@ export const site = {
 
   // --- Επικοινωνία ---
   contact: {
-    phone: '+30 21 0000 0000',
-    phoneRaw: '+302100000000',
-    mobile: '+30 690 000 0000',
-    mobileRaw: '+306900000000',
-    email: 'hello@example.com',
+    mobile: '+30 698 573 4354',
+    mobileRaw: '+306985734354',
+    email: 'p.rovatsos@gmail.com',
     address: {
       street: '',          // ιδιαίτερα → άσε κενό αν δεν θες διεύθυνση
-      area: 'Πειραιάς',
+      area: 'Πειραιάς, Αθήνα',
       postalCode: '',
       country: 'GR',
       lat: 37.9838,
@@ -148,7 +146,7 @@ export const site = {
   // --- Υπογραφή TenLux (easter egg) ---
   credit: {
     name: 'TenLux',
-    email: 'hello@tenlux.dev',
+    email: 'p.rovatsos@gmail.com',
     motto: 'Post tenebras spero lucem',
   },
 }

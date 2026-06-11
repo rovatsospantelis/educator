@@ -33,7 +33,7 @@ const { active } = useScrollSpy(
 <template>
   <TheNavbar :links="navLinks" :active="active" />
 
-  <main>
+  <main class="mx-auto max-w-[var(--site-col)] bg-[var(--col-bg)]">
     <RouterView />
   </main>
 

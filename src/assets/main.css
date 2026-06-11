@@ -18,8 +18,10 @@
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Inter", system-ui, sans-serif;
+  --font-brand: "Cormorant Garamond", Georgia, serif;
 
-  --site-col: 56rem;
+  --site-col: 72rem;
+  --col-bg: #edf0e7;     /* στήλη — λίγο πιο βαθύ sage */
 }
 
 /* ============================================================
@@ -28,15 +30,16 @@
    ή το αντίστροφο — όρισε ρητά κάθε ρόλο.
    ============================================================ */
 html.dark {
-  --color-bg: #121212;
-  --color-bg-soft: #1a1a1a;
-  --color-surface: #1e1e1e;
-  --color-ink: #ececec;
-  --color-ink-soft: #a0a0a0;
-  --color-muted: #444444;
-  --color-line: #2a2a2a;
-  --color-accent: #a3bd8d;
-  --color-accent-deep: #ffffff;
+  --color-bg: #121411;          /* σχεδόν μαύρο, ίχνος sage */
+  --color-bg-soft: #181b16;
+  --color-surface: #1c1f1a;
+  --color-ink: #ecece8;         /* ζεστό λευκό, όχι κλινικό */
+  --color-ink-soft: #a3a49c;
+  --color-muted: #474a42;
+  --color-line: #2e2827;
+  --color-accent: #a3bd8d;      /* ανοιχτό sage — το dark του #3f5237 */
+  --color-accent-deep: #f2f3ee; /* ζεστό off-white αντί καθαρό λευκό */
+  --col-bg: #1b211a;            /* σκούρο sage στήλη */
 }
 
 /* ============================================================
@@ -148,11 +151,13 @@ html.dark {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
 @media (min-width: 768px) {
   .tl-toggle::after {
     top: 50%;
-    left: calc(100% + 10px);
-    transform: translateY(-50%) translateX(-4px);
+    right: calc(100% + 10px);
+    left: auto;
+    transform: translateY(-50%) translateX(4px);
   }
   .tl-toggle:hover::after {
     transform: translateY(-50%) translateX(0);

@@ -15,7 +15,7 @@ defineProps({
   >
     <div
       class="mx-auto px-6 pt-14 pb-20 md:pt-20"
-      :class="narrow ? 'max-w-3xl' : 'max-w-6xl'"
+      :class="narrow ? 'max-w-3xl' : 'max-w-[var(--site-col)]'"
     >
       <div v-if="eyebrow || title" class="text-center">
         <p v-if="eyebrow" class="font-display text-2xl italic text-ink-soft">
