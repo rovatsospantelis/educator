@@ -69,7 +69,7 @@ export const site = {
   },
 
   // --- Formspree endpoint για τη φόρμα (https://formspree.io/f/XXXX) ---
-  formEndpoint: '',
+  formEndpoint: 'https://formspree.io/f/mojzkewl',
 
   // ============================================================
   //  ΠΕΡΙΕΧΟΜΕΝΟ ΣΕΛΙΔΑΣ — όλο εδώ, το HomeView απλώς το διαβάζει

@@ -63,20 +63,20 @@ const navLinks = [
 
   <!-- Mobile bottom tab bar — serif text + underline (variant C) -->
   <nav
-      class="fixed inset-x-0 bottom-0 z-50 border-t border-line backdrop-blur md:hidden"
+      class="fixed inset-x-0 z-50 min-h-[72px] border-t border-line backdrop-blur md:hidden"
       style="background: color-mix(in srgb, var(--color-surface) 95%, transparent)"
   >
     <ul
-        class="flex items-center justify-around px-2 pt-3"
-        style="padding-bottom: calc(0.7rem + env(safe-area-inset-bottom))"
+        class="flex min-h-[72px] items-center justify-around px-2 pt-3"
+        style="padding-bottom: calc(0.9rem + env(safe-area-inset-bottom))"
     >
       <li v-for="l in props.links" :key="l.id">
         <RouterLink
             :to="{ hash: '#' + l.id }"
             :class="[
-            'nav-link font-brand text-[15px] transition-colors',
-            props.active === l.id ? 'is-active text-accent-deep' : 'text-ink-soft',
-          ]"
+          'nav-link font-brand text-[15px] transition-colors',
+          props.active === l.id ? 'is-active text-accent-deep' : 'text-ink-soft',
+        ]"
         >
           {{ l.short || l.label }}
         </RouterLink>
