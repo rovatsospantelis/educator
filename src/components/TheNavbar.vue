@@ -21,12 +21,13 @@ const navLinks = [
 </script>
 
 <template>
+  <!-- Header sticky στην κορυφή -->
   <header
-      class="sticky top-0 z-50 border-b border-line backdrop-blur"
+      class="sticky top-0 z-50 h-[80px] border-b border-line backdrop-blur"
       style="background: color-mix(in srgb, var(--color-bg) 90%, transparent)"
   >
-    <div class="relative mx-auto flex max-w-[var(--site-col)] items-center justify-between px-6 py-4">
-      <!-- Αχνό watermark (clip στα όρια του header) -->
+    <div class="relative mx-auto flex h-full max-w-[var(--site-col)] items-center justify-between px-6">
+      <!-- Αχνό watermark στο header -->
       <div class="pointer-events-none absolute inset-0 overflow-hidden">
         <img
             src="/flower-watermark-transparent.png"
@@ -36,13 +37,17 @@ const navLinks = [
         />
       </div>
 
-      <!-- Brand → κορυφή -->
+      <!-- Brand -->
       <RouterLink :to="{ hash: '#top' }" class="relative z-10 leading-none">
-        <span class="block font-brand text-[32px] font-semibold">{{ site.name }}</span>
-        <span class="mt-1 block text-[11px] uppercase tracking-[0.22em] text-ink-soft">Φιλόλογος</span>
+        <span class="block font-brand text-[32px] font-semibold">
+          {{ site.name }}
+        </span>
+        <span class="mt-1 block text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+          Φιλόλογος
+        </span>
       </RouterLink>
 
-      <!-- Δεξιά: serif links + toggle στην άκρη -->
+      <!-- Desktop nav + theme toggle -->
       <div class="relative z-10 flex items-center gap-6">
         <nav class="hidden items-center gap-7 md:flex">
           <RouterLink
@@ -50,9 +55,9 @@ const navLinks = [
               :key="l.id"
               :to="{ hash: '#' + l.id }"
               :class="[
-      'nav-link font-brand text-lg transition-colors hover:text-accent-deep',
-      props.active === l.id ? 'is-active text-accent-deep' : 'text-ink',
-    ]"
+              'nav-link font-brand text-lg transition-colors hover:text-accent-deep',
+              props.active === l.id ? 'is-active text-accent-deep' : 'text-ink',
+            ]"
           >
             {{ l.label }}
           </RouterLink>
@@ -63,21 +68,19 @@ const navLinks = [
     </div>
   </header>
 
-  <!-- Mobile bottom tab bar — serif text + underline (variant C) -->
+  <!-- Mobile navbar sticky κάτω από το header -->
   <nav
-      class="border-b border-line backdrop-blur md:hidden"
+      class="sticky top-[80px] z-40 border-b border-line backdrop-blur md:hidden"
       style="background: color-mix(in srgb, var(--color-surface) 95%, transparent)"
   >
-    <ul
-        class="flex min-h-[56px] items-center justify-around px-2"
-    >
+    <ul class="flex min-h-[52px] items-center justify-around px-2">
       <li v-for="l in props.links" :key="l.id">
         <RouterLink
             :to="{ hash: '#' + l.id }"
             :class="[
-          'nav-link font-brand text-[15px] transition-colors',
-          props.active === l.id ? 'is-active text-accent-deep' : 'text-ink-soft',
-        ]"
+            'nav-link font-brand text-[15px] transition-colors',
+            props.active === l.id ? 'is-active text-accent-deep' : 'text-ink-soft',
+          ]"
         >
           {{ l.short || l.label }}
         </RouterLink>
