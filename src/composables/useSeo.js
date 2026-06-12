@@ -45,13 +45,13 @@ export function useStructuredData() {
   }
 
   const data = {
-    '@context': 'https://schema.org',
+    '@context': 'https://educatoronepager.netlify.app',
     '@type': site.seo.schemaType,
     name: site.name,
     description: site.description,
     url: site.domain,
     image: site.domain + site.seo.ogImage,
-    telephone: c.phoneRaw,
+    telephone: c.mobileRaw,
     priceRange: site.seo.priceRange,
     address: {
       '@type': 'PostalAddress',
