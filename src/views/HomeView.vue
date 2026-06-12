@@ -20,36 +20,44 @@ const info = site.contact
   <div>
     <!-- ============ HERO ============ -->
     <section id="top" class="border-b border-line">
-      <div class="mx-auto grid max-w-[var(--site-col)] items-center gap-12 px-6 pt-12 pb-16 md:grid-cols-2 md:py-28">
-        <div class="text-center md:text-left">
-          <p class="font-display text-2xl italic text-ink-soft">{{ site.tagline }}</p>
+      <div class="mx-auto max-w-[var(--site-col)] px-6 pt-12 pb-16 md:py-28">
+        <br>
+        <div class="mx-auto max-w-3xl text-center">
+<!--          <p class="font-display text-2xl italic text-ink-soft">-->
+<!--            {{ site.tagline }}-->
+<!--          </p>-->
+
           <h1 class="mt-2 text-4xl font-bold md:text-5xl">
             {{ c.hero.headline }}
-            <span class="font-display italic text-accent">{{ c.hero.headlineAccent }}</span>
+            <span class="font-display italic text-accent">
+          {{ c.hero.headlineAccent }}
+        </span>
           </h1>
-          <p class="mt-5 leading-relaxed text-ink-soft md:max-w-md">{{ c.hero.lead }}</p>
-          <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+
+          <p class="mx-auto mt-5 max-w-xl leading-relaxed text-ink-soft">
+            {{ c.hero.lead }}
+          </p>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-6">
             <RouterLink
                 :to="{ hash: '#contact' }"
                 class="group inline-flex items-center gap-5 border-b border-ink pb-2 text-ink text-lg font-semibold tracking-tight transition-all duration-300 hover:gap-7"
                 @click="trackCTA('hero')"
             >
-              <span class="transition-transform duration-300 group-hover:translate-x-1">
-                Κλείσε δωρεάν γνωριμία →
-              </span>
+          <span class="transition-transform duration-300 group-hover:translate-x-1">
+            Κλείσε δωρεάν γνωριμία →
+          </span>
             </RouterLink>
+
             <RouterLink
                 :to="{ hash: '#subjects' }"
                 class="group inline-flex items-center gap-5 border-b border-ink pb-2 text-ink text-lg font-semibold tracking-tight transition-all duration-300 hover:gap-7"
             >
-              <span class="transition-transform duration-300 group-hover:translate-x-1">
-                Δες τα μαθήματα →
-              </span>
+          <span class="transition-transform duration-300 group-hover:translate-x-1">
+            Δες τα μαθήματα →
+          </span>
             </RouterLink>
           </div>
-        </div>
-        <div class="mx-auto w-full max-w-md md:mx-0">
-          <div class="aspect-square w-full rounded-2xl bg-bg-soft"></div>
         </div>
       </div>
     </section>
@@ -60,7 +68,11 @@ const info = site.contact
       <BaseSection eyebrow="Η καθηγήτρια" title="Λίγα λόγια για μένα" soft watermark="quill">
       <div class="mx-auto max-w-2xl text-center">
           <div v-reveal class="mx-auto w-full max-w-[240px]">
-            <div class="aspect-[3/4] w-full rounded-2xl bg-bg-soft"></div>
+            <img
+                src="/edu-img.JPG"
+                alt="Παναγιώτα Κατσούλα, φιλόλογος"
+                class="aspect-[3/4] w-full rounded-2xl object-cover"
+            />
             <p class="mt-3 text-sm text-ink-soft">{{ c.about.role }}</p>
           </div>
           <div v-reveal="{ delay: 120 }" class="mt-8 space-y-5 leading-relaxed text-ink-soft">

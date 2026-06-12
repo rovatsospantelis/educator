@@ -5,7 +5,7 @@ TENLUX STARTER — Icon & OG image generator
 Φτιάχνει PWA icons + apple-touch + OG image από ένα λογότυπο.
 
 Χρήση:
-  python3 scripts/make_assets.py path/to/logo.png "#FFFFFF" "Tagline κειμένου"
+  python3 scripts/make_assets.py public/flower.png "#edf0e7" "Παναγιώτα Κατσούλα • Φιλόλογος"
 
 Args:
   1) logo path (PNG/JPG — αν έχει φόντο, κάνε keying με --keyed)

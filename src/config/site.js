@@ -14,16 +14,16 @@ export const site = {
     'Ιδιαίτερα μαθήματα φιλολογικών για Δημοτικό, Γυμνάσιο, Λύκειο και Πανελλήνιες. Αρχαία, Έκθεση, Λατινικά, Λογοτεχνία' +
       ' — με προσωπικό πλάνο για κάθε μαθητή.',
   lang: 'el',
-  domain: 'https://example.com', // χωρίς trailing slash
+  domain: 'https://educatoronepager.netlify.app', // χωρίς trailing slash
 
   // --- Επικοινωνία ---
   contact: {
     mobile: '+30 698 573 4354',
     mobileRaw: '+306985734354',
-    email: 'p.rovatsos@gmail.com',
+    email: 'pennny1991@gmail.com',
     address: {
-      street: '',          // ιδιαίτερα → άσε κενό αν δεν θες διεύθυνση
-      area: 'Πειραιάς, Αθήνα',
+      street: '',
+      area: 'Κερατσίνι, Πειραιάς',
       postalCode: '',
       country: 'GR',
       lat: 37.9838,
@@ -69,7 +69,7 @@ export const site = {
   },
 
   // --- Formspree endpoint για τη φόρμα (https://formspree.io/f/XXXX) ---
-  formEndpoint: 'https://formspree.io/f/mojzkewl',
+  formEndpoint: 'https://formspree.io/f/maqzplwq',
 
   // ============================================================
   //  ΠΕΡΙΕΧΟΜΕΝΟ ΣΕΛΙΔΑΣ — όλο εδώ, το HomeView απλώς το διαβάζει
@@ -77,7 +77,7 @@ export const site = {
   content: {
     hero: {
       headline: 'Φιλολογικά, με μέθοδο που',
-      headlineAccent: 'βγάζει αποτέλεσμα',
+      headlineAccent: 'φέρνει αποτελέσματα',
       lead: 'Αρχαία, Έκθεση και Λογοτεχνία για Γυμνάσιο, Λύκειο και Πανελλήνιες. Όχι μαζική ύλη — προσωπικό πλάνο στα μέτρα κάθε μαθητή.',
     },
 

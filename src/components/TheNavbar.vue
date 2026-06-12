@@ -1,6 +1,5 @@
 <script setup>
 import ThemeToggle from '@/components/ThemeToggle.vue'
-import FlowerMark from '@/components/FlowerMark.vue'
 import { site } from '@/config/site'
 
 /**
@@ -29,8 +28,11 @@ const navLinks = [
     <div class="relative mx-auto flex max-w-[var(--site-col)] items-center justify-between px-6 py-4">
       <!-- Αχνό watermark (clip στα όρια του header) -->
       <div class="pointer-events-none absolute inset-0 overflow-hidden">
-        <FlowerMark
-            class="absolute top-1/2 left-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 text-accent opacity-[0.05]"
+        <img
+            src="/flower-watermark-transparent.png"
+            alt=""
+            aria-hidden="true"
+            class="absolute top-1/2 left-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.13] dark:opacity-[0.08]"
         />
       </div>
 
@@ -63,11 +65,11 @@ const navLinks = [
 
   <!-- Mobile bottom tab bar — serif text + underline (variant C) -->
   <nav
-      class="fixed inset-x-0 z-50 min-h-[72px] border-t border-line backdrop-blur md:hidden"
+      class="fixed inset-x-0 z-50 min-h-[52px] border-t border-line backdrop-blur md:hidden"
       style="background: color-mix(in srgb, var(--color-surface) 95%, transparent)"
   >
     <ul
-        class="flex min-h-[72px] items-center justify-around px-2 pt-3"
+        class="flex min-h-[52px] items-center justify-around px-2 pt-3"
         style="padding-bottom: calc(0.9rem + env(safe-area-inset-bottom))"
     >
       <li v-for="l in props.links" :key="l.id">
