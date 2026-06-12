@@ -24,7 +24,7 @@ const navLinks = [
   <!-- Header sticky στην κορυφή -->
   <header
       class="sticky top-0 z-50 h-[80px] border-b border-line backdrop-blur"
-      style="background: color-mix(in srgb, var(--color-bg) 90%, transparent)"
+      style="background: var(--color-bg)"
   >
     <div class="relative mx-auto flex h-full max-w-[var(--site-col)] items-center justify-between px-6">
       <!-- Αχνό watermark στο header -->
