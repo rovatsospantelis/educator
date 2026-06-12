@@ -45,6 +45,9 @@ const navLinks = [
         <span class="mt-1 block text-[11px] uppercase tracking-[0.22em] text-ink-soft">
           Φιλόλογος
         </span>
+        <span class="mt-1 block text-[11px] uppercase tracking-[0.22em] text-ink-soft">
+          <br>
+        </span>
       </RouterLink>
 
       <!-- Desktop nav + theme toggle -->
