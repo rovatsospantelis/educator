@@ -65,12 +65,11 @@ const navLinks = [
 
   <!-- Mobile bottom tab bar — serif text + underline (variant C) -->
   <nav
-      class="fixed inset-x-0 z-50 min-h-[52px] border-t border-line backdrop-blur md:hidden"
+      class="border-b border-line backdrop-blur md:hidden"
       style="background: color-mix(in srgb, var(--color-surface) 95%, transparent)"
   >
     <ul
-        class="flex min-h-[52px] items-center justify-around px-2 pt-3"
-        style="padding-bottom: calc(0.9rem + env(safe-area-inset-bottom))"
+        class="flex min-h-[56px] items-center justify-around px-2"
     >
       <li v-for="l in props.links" :key="l.id">
         <RouterLink

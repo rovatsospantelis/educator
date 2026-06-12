@@ -7,7 +7,7 @@
    ============================================================ */
 @theme {
   --color-bg: #ffffff;
-  --color-bg-soft: #f7f7f5;
+  --color-bg-soft: #f3f6ed;
   --color-surface: #ffffff;
   --color-ink: #1a1a1a;
   --color-ink-soft: #666666;
@@ -21,7 +21,7 @@
   --font-brand: "Cormorant Garamond", Georgia, serif;
 
   --site-col: 72rem;
-  --col-bg: #edf0e7;     /* στήλη — λίγο πιο βαθύ sage */
+  --col-bg: #e4ecd6;
 }
 
 /* ============================================================
@@ -43,7 +43,7 @@ html.dark {
   --color-accent: #c1d6a8;      /* φωτεινό sage για accents */
   --color-accent-deep: #f6f1e8; /* για έντονα στοιχεία στο dark */
 
-  --col-bg: #273321;            /* η sage στήλη, πιο ορατή αλλά όχι βαριά */
+  --col-bg: #3a4a31;            /* η sage στήλη, πιο ορατή αλλά όχι βαριά */
 }
 
 /* ============================================================

@@ -21,12 +21,7 @@ const info = site.contact
     <!-- ============ HERO ============ -->
     <section id="top" class="border-b border-line">
       <div class="mx-auto max-w-[var(--site-col)] px-6 pt-12 pb-16 md:py-28">
-        <br>
         <div class="mx-auto max-w-3xl text-center">
-<!--          <p class="font-display text-2xl italic text-ink-soft">-->
-<!--            {{ site.tagline }}-->
-<!--          </p>-->
-
           <h1 class="mt-2 text-4xl font-bold md:text-5xl">
             {{ c.hero.headline }}
             <span class="font-display italic text-accent">
