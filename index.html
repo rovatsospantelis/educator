@@ -1,56 +1,78 @@
 <!doctype html>
 <html lang="el">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <!-- No-flash theme (πριν φορτώσει η εφαρμογή) -->
+    <!-- No-flash theme -->
     <script>
-      (function () {
-        try {
-          var t = localStorage.getItem('theme')
-          if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-          if (t === 'dark') document.documentElement.classList.add('dark')
-        } catch (e) {}
-      })()
+        (function () {
+            try {
+                var t = localStorage.getItem('theme')
+                if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+                if (t === 'dark') document.documentElement.classList.add('dark')
+            } catch (e) {}
+        })()
     </script>
 
-    <!-- Fonts: άλλαξε ανά project -->
+    <meta name="theme-color" content="#ffffff" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- SEO defaults (per-page overrides via useHead) -->
-      <title>Brand Name — Tagline</title>
-      <meta name="description" content="Default description ~150 chars." />
-      <meta property="og:title" content="Brand Name" />
-      <meta property="og:description" content="Default description." />
-      <meta property="og:image" content="https://educatoronepager.netlify.app/og-image.png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:url" content="https://educatoronepager.netlify.app/" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Brand Name" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="https://educatoronepager.netlify.app/og-image.png" />
-      <meta name="theme-color" content="#ffffff" />
+    <!-- SEO -->
+    <title>Φιλόλογος Πειραιάς – Κερατσίνι | Παναγιώτα Κατσούλα</title>
+    <meta name="description" content="Ιδιαίτερα φιλολογικών (Αρχαία, Έκθεση, Λατινικά) για Γυμνάσιο, Λύκειο & Πανελλήνιες στον Πειραιά, Κερατσίνι και γύρω περιοχές. Προσωπικό πλάνο για κάθε μαθητή." />
+    <link rel="canonical" href="https://educatoronepager.netlify.app/" />
 
-    <!-- Google Analytics (βάλε το ID — αλλιώς δεν φορτώνει) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag(){dataLayer.push(arguments)}
-      if (!['localhost','127.0.0.1'].includes(location.hostname)) {
-        gtag('js', new Date())
-        gtag('config', 'G-XXXXXXXXXX', { send_page_view: false })
-      }
+    <meta property="og:title" content="Φιλόλογος Πειραιάς – Κερατσίνι | Παναγιώτα Κατσούλα" />
+    <meta property="og:description" content="Ιδιαίτερα φιλολογικών για Γυμνάσιο, Λύκειο & Πανελλήνιες στον Πειραιά, Κερατσίνι και γύρω περιοχές." />
+    <meta property="og:image" content="https://educatoronepager.netlify.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://educatoronepager.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Παναγιώτα Κατσούλα — Φιλόλογος" />
+    <meta property="og:locale" content="el_GR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://educatoronepager.netlify.app/og-image.png" />
+
+    <!-- JSON-LD (static για crawlers χωρίς JS) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": ["LocalBusiness", "EducationalOrganization"],
+            "name": "Παναγιώτα Κατσούλα — Φιλόλογος",
+            "description": "Ιδιαίτερα φιλολογικών για Γυμνάσιο, Λύκειο και Πανελλήνιες στον Πειραιά και το Κερατσίνι.",
+            "url": "https://educatoronepager.netlify.app/",
+            "image": "https://educatoronepager.netlify.app/og-image.png",
+            "telephone": "+306985734354",
+            "email": "pennny1991@gmail.com",
+            "priceRange": "€€",
+            "founder": { "@type": "Person", "name": "Παναγιώτα Κατσούλα", "jobTitle": "Φιλόλογος" },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Κερατσίνι",
+                "addressRegion": "Πειραιάς",
+                "addressCountry": "GR"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 37.965, "longitude": 23.619 },
+            "areaServed": [
+                { "@type": "City", "name": "Πειραιάς" },
+                { "@type": "City", "name": "Κερατσίνι" },
+                { "@type": "City", "name": "Δραπετσώνα" },
+                { "@type": "City", "name": "Νίκαια" },
+                { "@type": "City", "name": "Κορυδαλλός" },
+                { "@type": "City", "name": "Πέραμα" }
+            ],
+            "knowsAbout": ["Αρχαία Ελληνικά", "Νεοελληνική Γλώσσα", "Έκθεση", "Λατινικά", "Λογοτεχνία", "Ιστορία"]
+        }
     </script>
-    -->
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
 </html>

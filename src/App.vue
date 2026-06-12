@@ -4,12 +4,8 @@ import TheNavbar from '@/components/TheNavbar.vue'
 import TheFooter from '@/components/TheFooter.vue'
 import WhatsAppButton from '@/components/WhatsAppButton.vue'
 import { site } from '@/config/site'
-import { useStructuredData } from '@/composables/useSeo'
 import { useScrollSpy } from '@/composables/useScrollSpy'
 import { trackSection } from '@/utils/track'
-
-// JSON-LD μία φορά για όλο το site
-useStructuredData()
 
 /**
  * One-pager nav: κάθε link δείχνει σε <section id> της αρχικής.

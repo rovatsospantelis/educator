@@ -8,7 +8,7 @@ import { usePageSeo } from '@/composables/useSeo'
 import { trackCTA } from '@/utils/track'
 
 usePageSeo({
-  title: `${site.name} — ${site.tagline}`,
+  title: site.seo.title,
   description: site.description,
 })
 
@@ -144,8 +144,9 @@ const info = site.contact
         <div class="grid gap-10 lg:grid-cols-2">
           <div v-reveal class="text-center">
             <p class="mx-auto max-w-md leading-relaxed text-ink-soft">
-              Στείλε μήνυμα για μια δωρεάν συνάντηση γνωριμίας — θα συζητήσουμε επίπεδο,
-              στόχους και πρόγραμμα, χωρίς καμία δέσμευση.
+              Ιδιαίτερα φιλολογικών στον {{ c.areasServed }}. Στείλε μήνυμα για μια
+              δωρεάν συνάντηση γνωριμίας — θα συζητήσουμε επίπεδο, στόχους και πρόγραμμα,
+              χωρίς καμία δέσμευση.
             </p>
             <ul class="mt-8 space-y-6">
               <li v-if="info.address.area" class="flex flex-col items-center gap-1">
