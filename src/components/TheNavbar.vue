@@ -38,16 +38,13 @@ const navLinks = [
       </div>
 
       <!-- Brand -->
-      <RouterLink :to="{ hash: '#top' }" class="relative z-10 leading-none">
-        <span class="block font-brand text-[32px] font-semibold">
-          {{ site.name }}
-        </span>
+      <RouterLink :to="{ hash: '#top' }" class="relative z-10 block pb-2 leading-none">
+  <span class="block font-brand text-[32px] font-semibold">
+    {{ site.name }}
+  </span>
         <span class="mt-1 block text-[11px] uppercase tracking-[0.22em] text-ink-soft">
-          Φιλόλογος
-        </span>
-        <span class="mt-1 block text-[11px] uppercase tracking-[0.22em] text-ink-soft">
-          <br>
-        </span>
+    Φιλόλογος
+  </span>
       </RouterLink>
 
       <!-- Desktop nav + theme toggle -->
