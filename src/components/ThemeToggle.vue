@@ -1,7 +1,6 @@
 <script setup>
 import { Sun, Moon } from 'lucide-vue-next'
 import { useTheme } from '@/composables/useTheme'
-import { site } from '@/config/site'
 
 const { isDark, toggle } = useTheme()
 
@@ -9,9 +8,9 @@ function onToggle() {
   toggle()
   // Developer easter egg — η υπογραφή TenLux
   console.log(
-    `%c🌓 ${site.credit.motto} %c· crafted by ${site.credit.name}`,
-    'color:var(--color-accent);font-weight:bold;font-family:serif;font-size:13px',
-    'color:#9a9183;font-style:italic'
+      '%c🌓 Tenebras Lux %c— ' + (isDark.value ? 'Post Tenebras' : 'spero Lucem') + ' · crafted by TenLux',
+      'color:#5BC4EC;font-weight:bold;font-family:serif;font-size:13px',
+      'color:#9a9183;font-style:italic'
   )
 }
 </script>

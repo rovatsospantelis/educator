@@ -1,8 +1,10 @@
 <script setup>
 import { Instagram, Facebook } from 'lucide-vue-next'
 import { site } from '@/config/site'
+import { useTheme } from '@/composables/useTheme'
 
-const year = new Date().getFullYear()
+const { isDark } = useTheme()
+
 const c = site.contact
 const s = site.social
 
@@ -75,7 +77,8 @@ function dayLine(d) {
     <!-- Bottom bar -->
     <div class="border-t" style="border-color: rgba(255,255,255,0.08)">
       <div class="mx-auto max-w-[var(--site-col)] px-6 pt-5 pb-28 text-center text-xs opacity-60 md:pb-5">
-        <p>© Post Tenebras Spero Lucem</p>
+        <p v-if="!isDark">© Spero Lucem</p>
+        <p v-else>© Post Tenebras</p>
         <p class="mt-1">
           Powered by
           <a :href="'mailto:' + site.credit.email" class="font-medium hover:opacity-100">
