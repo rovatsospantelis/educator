@@ -86,7 +86,7 @@ const info = site.contact
     <!-- ============ ΜΑΘΗΜΑΤΑ (centered cards) ============ -->
     <div id="subjects" class="scroll-mt-24 md:scroll-mt-28">
       <BaseSection eyebrow="Μαθήματα" title="Τι διδάσκω">
-        <div class="grid gap-6 md:grid-cols-4">
+        <div class="grid gap-6 md:grid-cols-3">
           <div
               v-for="(s, i) in c.subjects"
               :key="s.level"
