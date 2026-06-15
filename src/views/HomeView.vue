@@ -73,7 +73,7 @@ const info = site.contact
           <div v-reveal="{ delay: 120 }" class="mt-8 space-y-5 leading-relaxed text-ink-soft">
             <p v-for="(p, i) in c.about.paragraphs" :key="i">{{ p }}</p>
           </div>
-          <dl class="mt-10 grid grid-cols-3 gap-4 border-t border-line pt-8">
+          <dl class="mt-10 grid grid-cols-1 gap-4 border-t border-line pt-8">
             <div v-for="h in c.about.highlights" :key="h.label">
               <dt class="font-display text-3xl font-bold text-accent-deep md:text-4xl">{{ h.value }}</dt>
               <dd class="mt-1 text-sm text-ink-soft">{{ h.label }}</dd>
