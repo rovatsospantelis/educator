@@ -23,7 +23,7 @@ const navLinks = [
 <template>
   <!-- Header sticky στην κορυφή -->
   <header
-      class="sticky top-0 z-50 h-[80px] border-b border-line backdrop-blur"
+      class="sticky top-0 z-50 h-[84px] box-content border-b border-line backdrop-blur pt-[env(safe-area-inset-top)]"
       style="background: var(--color-bg)"
   >
     <div class="relative mx-auto flex h-full max-w-[var(--site-col)] items-center justify-between px-6">
@@ -70,7 +70,7 @@ const navLinks = [
 
   <!-- Mobile navbar sticky κάτω από το header -->
   <nav
-      class="sticky top-[80px] z-40 border-b border-line backdrop-blur md:hidden"
+      class="sticky top-[calc(84px_+_env(safe-area-inset-top))] z-40 border-b border-line backdrop-blur md:hidden"
       style="background: color-mix(in srgb, var(--color-surface) 95%, transparent)"
   >
     <ul class="flex min-h-[52px] items-center justify-around px-2">
